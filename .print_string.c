@@ -1,8 +1,3 @@
-#include <stddef.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -11,15 +6,15 @@
 * Return: count
 */
 
-int print_string(char *str, ...)
+int print_string(char *str)
 {
-	int count = 0;
+	int count = 0, i = 0;
 
 	while (*str != '\0')
 	{
-		putchar(*str);
+		_putchar(str[i]);
 		count++;
-		str++;
+		i++;
 	}
 
 	return (count);

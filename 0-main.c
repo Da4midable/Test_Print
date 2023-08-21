@@ -1,8 +1,3 @@
-#include <stddef.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
 	
 int main(void)
@@ -27,7 +22,7 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 
 	_printf("Len:[%d]\n", len);
-	printf("Len:[%d]\n", len2);
+	    printf("Len:[%d]\n", len2);
 
 	return (0);
 }

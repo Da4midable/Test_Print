@@ -1,8 +1,3 @@
-#include <stddef.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -15,11 +10,19 @@
 int rep_format(char specifier, va_list list)
 {
 	int count = 0;
+	char *str;
 
 	if (specifier == 'c')
 		count += _putchar(va_arg(list, int));
 	else if (specifier == 's')
-		count += print_string(va_arg(list, char *));
+	{
+		str = va_arg(list, char *);
+		while (*str)
+		{
+			count += _putchar(*str);
+			str++;
+		}
+	}
 	else if (specifier == '%')
 		count += _putchar('%');
 	else

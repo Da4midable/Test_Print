@@ -9,24 +9,25 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int count;
+	int count = 0, i = 0;
 
 	va_start(list, format);
 
-	while (*format != '\0')
+	while (format[i] != '\0')
 	{
 
-		if (*format == '%')
+		if (format[i] == '%')
 
 		{
-			count += rep_format(*(format++), list);
+			count += rep_format(format[++i], list);
 		}
 
 		else
 		{
-			count += _putchar(*format);
-			format++;
+			count += _putchar(format[i]);
 		}
+
+		i++;
 	}
 		_putchar('\n');
 		va_end(list);
