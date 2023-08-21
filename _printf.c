@@ -1,8 +1,3 @@
-#include <stddef.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -24,7 +19,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 
 		{
-			count += rep_format(format++, list);
+			count += rep_format(*(format++), list);
 		}
 
 		else

@@ -11,7 +11,7 @@
 * Return: count
 */
 
-int print_strings(char *str, ...)
+int print_string(char *str, ...)
 {
 	int count = 0;
 

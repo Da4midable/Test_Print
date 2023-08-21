@@ -11,6 +11,7 @@ int _putint(int n)
 {
 	char buffer[20];
 	int length = 0;
+	int i;
 
 	if (n == 0)
 {
@@ -30,7 +31,7 @@ int _putint(int n)
 	n /= 10;
 }
 
-	for (int i = length - 1; i >= 0; i--)
+	for (i = length - 1; i >= 0; i--)
 {
 	write(1, &buffer[i], 1);
 }

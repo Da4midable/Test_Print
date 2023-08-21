@@ -17,12 +17,14 @@ int rep_format(char specifier, va_list list)
 	int count = 0;
 
 	if (specifier == 'c')
-		count += _putchar(va_arg(list, int);
+		count += _putchar(va_arg(list, int));
 	else if (specifier == 's')
-		count += _putchar(va_arg(list, char *));
+		count += print_string(va_arg(list, char *));
 	else if (specifier == '%')
 		count += _putchar('%');
 	else
-	count += _putchar(specifier);
+	{
+		count += _putchar(specifier);
+	}
 	return (count);
 }
