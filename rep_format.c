@@ -34,9 +34,15 @@ int rep_format(char specifier, va_list list)
 		count += _puthex(va_arg(list, int));
 	else if (specifier == 'X')
 		count += _putHex(va_arg(list, int));
+	else if (specifier == 'u')
+		count += _unint(va_arg(list, int));
+	else if (specifier == 'o')
+		count += _putoct(va_arg(list, int)); 
 	else if (specifier == '%')
 		count += _putchar('%');
 	else
+	{
 		count += _putchar(specifier);
+	}
 	return (count);
 }

@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
-* _unsigned - prints unsigned integers
+* _unint - prints unsigned integers
 * @n: the unsigned integer to be printed
 * Return: length
 */
 
-int _unsigned(unsigned int n)
+int _unint(unsigned int n)
 {
 	char buffer[20];
 	int length = 0;
