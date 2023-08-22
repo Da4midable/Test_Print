@@ -20,4 +20,6 @@ int _puthex(int n);
 
 int _putint(int n);
 
+char *_itoa(int value, char *buffer, int radix);
+
 #endif
