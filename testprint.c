@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
 * _printf - a skeleton version of printf
 * @format: default string literal
@@ -9,26 +8,31 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int count = 0, i = 0;
-
-	if (format == NULL)
-		return (-1);
+	unsigned int count = 0, i = 0;
+	const unsigned int n = strlen(format);
+	
 
 	va_start(list, format);
 
-	while (format[i] != '\0')
+	while (i < n)
 	{
+
 		if (format[i] == '%')
+
 		{
 			count += rep_format(format[++i], list);
+			++i;
 		}
-		else
+
+		if (i != (n - 1) && format != NULL)
 		{
 			count += _putchar(format[i]);
 		}
+
 		i++;
 	}
-	va_end(list);
-	return (count);
+		_putchar('\0');
+		va_end(list);
+		return (count);
 }
 
