@@ -27,5 +27,6 @@
 	for (i = length - 1; i >= 0; i--)
 	{
 	write(1, &buffer[i], 1);
+	}
 	return (length);
 }

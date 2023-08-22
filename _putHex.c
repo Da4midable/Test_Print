@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
-* _puthex - converts integers to lowercase hexadecimals
+* _putHex - converts integers to hexadecimals
 * @n: the integer to be converted
 * Return: length + 2
 */
 
-int _puthex(unsigned int n)
+int _putHex(unsigned int n)
 {
 	char buffer[20];
 	int length = 0;
@@ -28,7 +28,7 @@ int _puthex(unsigned int n)
 
 	else
 	{
-		buffer[length++] = remainder - 10 + 'a';
+		buffer[length++] = remainder - 10 + 'A';
 	}
 
 	n /= 16;

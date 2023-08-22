@@ -16,9 +16,15 @@ int _putchar(char c);
 
 int print_string(char *str);
 
-int _puthex(int n);
+int hex(int n, int isUppercase);
 
 int _putint(int n);
+
+int _putbin(unsigned int n);
+
+int _puthex(unsigned int n);
+
+int _putHex(unsigned int n);
 
 char *_itoa(int value, char *buffer, int radix);
 

@@ -21,7 +21,6 @@ int _putint(int n)
 {
 	write(1, "-", 1);
 	n = -n;
-	length++;
 }
 
 	while (n > 0)
