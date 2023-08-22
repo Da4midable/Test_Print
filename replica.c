@@ -4,7 +4,7 @@ int _printf(const char *format, ...)
 {
 	char c;
 	char *s;
-	int count = 0;
+	int count = 0, str_len;
 	va_list output;
 
 	if (format == NULL)
@@ -12,31 +12,42 @@ int _printf(const char *format, ...)
 
 	va_start(output, format);
 
-	while (*format != '\0')
+	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-
+			if (*format == '\0')
+				break;
 			switch (*format)
 			{
 				case 'c':
 					c = va_arg(output, int);
-					count += putchar(c);
+					write(1, &c, 1);
+					count++;
 					break;
 				case 's':
 					s = va_arg(output, char *);
-					count += puts(s);
+					str_len = 0;
+					
+					while (s[str_len] != '\0')
+						str_len++;
+					write(1, s, str_len);
+					count += str_len;
 					break;
 				case '%':
-					count += putchar('%');
+					write(1, format, 1);
+					count++;
 					break;
 				default:
 					break;
 			}
 		}
 		else
-			count += putchar(*format);
+		{
+			write(1, format, 1);
+			count++;
+		}
 		format++;
 	}
 	va_end(output);
