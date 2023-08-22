@@ -12,6 +12,9 @@ int _printf(const char *format, ...)
 	const unsigned int n = strlen(format);
 	
 
+if (format == NULL)
+		return (-1);
+
 	va_start(list, format);
 
 	while (i < n)
@@ -34,5 +37,31 @@ int _printf(const char *format, ...)
 		_putchar('\0');
 		va_end(list);
 		return (count);
+=======
+		if (format[i] == '%')
+		{
+			count += rep_format(format[i + 1], list);
+			i++;
+		}
+<<<<<<<< HEAD:_printf.c
+		else
+========
+
+		if (i != (n - 1) && format != NULL)
+>>>>>>>> 008f55e853e1c467041ec9f08f3d2979f2ad958f:testprint.c
+		{
+			count += _putchar(format[i]);
+		}
+		i++;
+	}
+<<<<<<<< HEAD:_printf.c
+	va_end(list);
+	return (count);
+========
+		_putchar('\0');
+		va_end(list);
+		return (count);
+>>>>>>>> 008f55e853e1c467041ec9f08f3d2979f2ad958f:testprint.c
+>>>>>>> 008f55e853e1c467041ec9f08f3d2979f2ad958f
 }
 
